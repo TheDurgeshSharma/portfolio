@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Durgesh Kumar Sharma — Senior QA Automation Engineer</title>
+<meta name="description" content="Senior QA Automation Engineer with 9+ years of experience in Java, Selenium, REST Assured, Jenkins CI/CD and data validation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F1F4F6; --card:#FFFFFF; --ink:#1A2836; --muted:#566676; --line:#CFD8DE;
+  --pass:#17805A; --pass-bg:#DDF1E8; --flag:#C98400; --focus:#2457D6;
+  --hdr:rgba(241,244,246,.94); --foot:#F7F9FA; --band:#1A2836; --on-pass:#fff; --inv:#fff;
+  --display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+}
+:root[data-theme="dark"]{--paper:#111C26;--card:#18242F;--ink:#E8EEF2;--muted:#9DB0BF;--line:#2D3C49;--pass:#4FD1A0;--pass-bg:#16382D;--focus:#8FB4FF;--hdr:rgba(17,28,38,.94);--foot:#14202A;--band:#0C151D;--on-pass:#0C151D;--inv:#111C26;color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.15rem;line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 1.5rem}
+header.top{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--hdr);backdrop-filter:blur(6px);z-index:5}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;height:3.5rem;font-family:var(--display);font-weight:700;font-size:1rem}
+nav{display:flex;gap:1.4rem}
+nav a{text-decoration:none;font-weight:500;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+h1,h2,h3{font-family:var(--display);line-height:1.05;letter-spacing:-.02em}
+
+/* hero */
+.hero{padding:4.5rem 0 4rem;display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:start}
+.hero h1{font-size:clamp(2.8rem,7vw,5.2rem);font-weight:800}
+.role{font-family:var(--display);font-weight:500;font-size:1.25rem;margin:1.2rem 0 1rem;color:var(--pass)}
+.lede{max-width:34rem;color:var(--ink)}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem;font-family:var(--display);font-weight:700;font-size:1rem}
+.btn{padding:.75rem 1.2rem;border:2px solid var(--ink);border-radius:6px;text-decoration:none}
+.btn.fill{background:var(--ink);color:var(--paper)}
+.btn:hover{background:var(--pass);border-color:var(--pass);color:var(--on-pass)}
+
+/* test run panel — the one memorable element */
+.run{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;font-family:var(--display)}
+.run-head{display:flex;justify-content:space-between;padding:.8rem 1rem;border-bottom:1px solid var(--line);font-weight:700;font-size:.95rem}
+.run-head span:last-child{color:var(--muted);font-weight:500}
+.photo{position:relative;height:13rem;background:var(--pass-bg);border-bottom:1px solid var(--line);display:grid;place-items:center}
+.photo .ini{font-family:var(--display);font-weight:800;font-size:4rem;color:var(--pass)}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top}
+.info div{display:grid;grid-template-columns:7rem 1fr;gap:1rem;padding:.7rem 1rem;border-bottom:1px solid var(--line);font-size:.95rem}
+.info dt{color:var(--muted);font-weight:500}
+.info dd{font-weight:700;word-break:break-word}
+.run li{display:flex;justify-content:space-between;gap:1rem;padding:.7rem 1rem;border-bottom:1px solid var(--line);font-size:.95rem;font-weight:500}
+.run li:last-child{border-bottom:0}
+.st{flex:none;min-width:4.4rem;text-align:center;border-radius:4px;padding:0 .5rem;font-size:.8rem;font-weight:700;background:#E6EBEF;color:var(--muted)}
+.run li.go .st{background:#FFF1CC;color:var(--flag)}
+.run li.ok .st{background:var(--pass-bg);color:var(--pass)}
+.run-foot{padding:.8rem 1rem;background:var(--foot);border-top:1px solid var(--line);font-weight:700;font-size:.95rem;display:flex;justify-content:space-between}
+
+section{padding:4rem 0;border-top:1px solid var(--line)}
+section>.wrap>h2{font-size:2.2rem;margin-bottom:2rem}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.facts strong{display:block;font-family:var(--display);font-size:2.6rem;font-weight:800;line-height:1}
+.facts span{color:var(--muted);font-size:1rem}
+
+/* experience */
+.job{display:grid;grid-template-columns:11rem 1fr;gap:2rem;padding:2rem 0;border-bottom:1px solid var(--line)}
+.job:first-of-type{padding-top:0}
+.job:last-child{border-bottom:0;padding-bottom:0}
+.when{font-family:var(--display);font-weight:700;font-size:1rem}
+.when small{display:block;color:var(--muted);font-weight:500;margin-top:.2rem}
+.job h3{font-size:1.5rem;margin-bottom:.2rem}
+.org{color:var(--muted);margin-bottom:.8rem}
+.proj{display:inline-block;font-family:var(--display);font-weight:700;font-size:.9rem;background:var(--pass-bg);color:var(--pass);padding:.1rem .6rem;border-radius:4px;margin:.4rem 0 .6rem}
+.job ul{padding-left:1.2rem;max-width:44rem}
+.job li{margin-bottom:.45rem}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
+.group{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.3rem 1.4rem}
+.group h3{font-size:1.1rem;margin-bottom:.7rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.tags span{font-family:var(--display);font-weight:500;font-size:.88rem;border:1px solid var(--line);background:var(--paper);border-radius:4px;padding:.1rem .55rem}
+.tags span.core{border-color:var(--pass);background:var(--pass-bg);color:var(--pass)}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.two h3{font-size:1.2rem;margin-bottom:.8rem}
+.two ul{list-style:none}
+.two li{padding:.5rem 0;border-bottom:1px solid var(--line)}
+.two li small{display:block;color:var(--muted);font-size:1rem}
+
+.contact{background:var(--band);color:#fff;border:0}
+.contact h2{color:#fff}
+.cintro{color:#B8C6D2;max-width:36rem;margin:-1rem 0 2rem}
+.cgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.ccard{display:flex;align-items:center;gap:1rem;padding:1.2rem 1.3rem;background:#223446;border:1px solid #3B4B5B;border-radius:10px;text-decoration:none;font-family:var(--display);transition:background .15s,border-color .15s,transform .15s}
+.ccard:hover{background:#2A4157;border-color:#8FE3BF;transform:translateY(-2px)}
+.cico{flex:none;width:3rem;height:3rem;border-radius:50%;background:#17805A;display:grid;place-items:center}
+.cico svg{width:1.4rem;height:1.4rem;fill:none;stroke:#fff;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ctext{flex:1;min-width:0}
+.clabel{display:block;font-size:.85rem;font-weight:500;color:#9FB0BF}
+.cval{display:block;font-size:1.1rem;font-weight:700;color:#fff;word-break:break-word}
+.cact{flex:none;font-size:.85rem;font-weight:700;color:#8FE3BF}
+.contact :focus-visible{outline-color:#8FB4FF}
+footer{padding:1.5rem 0;color:var(--muted);font-size:.95rem}
+
+nav button{font:inherit;font-weight:700;color:var(--ink);background:none;border:1px solid var(--line);border-radius:6px;padding:0 .7rem;cursor:pointer}
+nav button:hover{border-color:var(--pass);color:var(--pass)}
+.agrid,.pgrid,.tgrid,.artgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
+.agrid strong{display:block;font-family:var(--display);font-size:1.5rem;font-weight:800;line-height:1.15}
+.agrid span{color:var(--muted);font-size:1rem}
+.card2{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:1.3rem 1.4rem}
+.card2 h3{font-size:1.3rem;margin-bottom:.2rem}
+.card2 .org{margin-bottom:.6rem;font-size:1rem}
+.card2 p{max-width:34rem}
+.card2 .tags{margin-top:.9rem}
+.card2 blockquote{font-size:1.15rem}
+.card2 cite{display:block;margin-top:.8rem;font-family:var(--display);font-style:normal;font-weight:700;font-size:.95rem}
+.card2 cite small{display:block;color:var(--muted);font-weight:500}
+.card2 a.t{text-decoration:none}.card2 a.t:hover{color:var(--pass)}
+.more{margin-top:1.5rem;font-family:var(--display);font-weight:700}
+.cform{margin-top:2.5rem;display:grid;gap:1rem;max-width:40rem;font-family:var(--display)}
+.cform h3{font-size:1.4rem;color:#fff}
+.cform label{display:grid;gap:.3rem;font-size:.9rem;font-weight:500;color:#9FB0BF}
+.cform input,.cform textarea{font:inherit;font-size:1rem;color:#fff;background:#223446;border:1px solid #3B4B5B;border-radius:6px;padding:.7rem .8rem}
+.cform textarea{min-height:8rem;resize:vertical}
+.cform button{justify-self:start;font:inherit;font-weight:700;color:#0C151D;background:#8FE3BF;border:0;border-radius:6px;padding:.75rem 1.4rem;cursor:pointer}
+.cform button:hover{background:#fff}
+.cform small{color:#9FB0BF}
+@media(max-width:820px){
+  .agrid,.pgrid,.tgrid,.artgrid{grid-template-columns:1fr}
+  .hero,.about,.two{grid-template-columns:1fr;gap:2rem}
+  .job{grid-template-columns:1fr;gap:.6rem}
+  .skills,.cgrid{grid-template-columns:1fr}
+  nav{gap:.7rem;font-size:.85rem;flex-wrap:wrap;justify-content:flex-end}
+  .hero{padding-top:2.5rem}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.ccard{transition:none}.ccard:hover{transform:none}}
+</style>
+<meta property="og:title" content="Durgesh Kumar Sharma — Senior QA Automation Engineer">
+<meta property="og:description" content="UI and API test automation with Java, Selenium, REST Assured and Jenkins CI/CD. 9+ years across SaaS, retail and data analytics.">
+<meta property="og:type" content="website">
+<script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',t)})()</script>
+</head>
+<body>
+<header class="top"><div class="wrap"><span>Durgesh Sharma</span>
+<nav aria-label="Primary"><a href="#about">About</a><a href="#experience">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a><button type="button" id="theme">Dark</button></nav></div></header>
+
+<main>
+<div class="wrap hero">
+  <div>
+    <h1>Durgesh Kumar Sharma</h1>
+    <p class="role">Senior QA Automation Engineer</p>
+    <p class="lede">I build UI and API test automation that teams can trust. Nine years across SaaS, retail and data analytics, working in Java, Selenium and REST Assured, with regression suites running inside Jenkins pipelines.</p>
+    <div class="cta"><a class="btn fill" href="#contact">Get in touch</a><a class="btn" href="#experience">See my experience</a><a class="btn" href="Durgesh_Kumar_Sharma_QA_Automation_Resume.pdf" download>Download resume</a></div>
+  </div>
+  <aside class="run" aria-label="Profile summary">
+    <div class="photo"><span class="ini" aria-hidden="true">DS</span><img src="photo.jpg" alt="Portrait of Durgesh Kumar Sharma" onerror="this.remove()"></div>
+    <div class="run-head"><span>At a glance</span></div>
+    <dl class="info">
+      <div><dt>Location</dt><dd>Pune, India (Remote)</dd></div>
+      <div><dt>Experience</dt><dd>9 years 9 months</dd></div>
+      <div><dt>Current role</dt><dd>Senior Automation Engineer, LogicMonitor</dd></div>
+      <div><dt>Certification</dt><dd>ISTQB Certified Tester, Foundation Level</dd></div>
+      <div><dt>Email</dt><dd><a href="mailto:se.durgeshsharma@gmail.com">se.durgeshsharma@gmail.com</a></dd></div>
+      <div><dt>Phone</dt><dd><a href="tel:+917275235226">+91 7275235226</a></dd></div>
+    </dl>
+    <div class="run-foot"><span>Core: Java · Selenium · REST Assured · Jenkins</span></div>
+  </aside>
+</div>
+
+<section id="about"><div class="wrap">
+  <h2>About</h2>
+  <div class="about">
+    <p>Senior QA Automation Engineer with 9+ years of experience across SaaS, food-chain retail and data analytics. I design and maintain UI and API automation, wire automated regression checks into Jenkins CI/CD, and support quality through log analysis, SQL/ETL validation and defect investigation.</p>
+    <div class="facts">
+      <div><strong>9y 9m</strong><span>in QA and test automation</span></div>
+      <div><strong>3</strong><span>domains: SaaS, retail, data analytics</span></div>
+      <div><strong>4</strong><span>companies, from IQVIA to LogicMonitor</span></div>
+      <div><strong>ISTQB</strong><span>Certified Tester, Foundation Level</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="achievements" hidden><div class="wrap"><h2>Achievements</h2><div class="agrid" id="ach"></div></div></section>
+
+<section id="experience"><div class="wrap">
+  <h2>Experience</h2>
+
+  <article class="job">
+    <div class="when">Jul 2021 – Present<small>Pune, India (Remote)</small></div>
+    <div>
+      <h3>Senior Automation Engineer</h3><p class="org">LogicMonitor India LLP</p>
+      <span class="proj">Santaba · SaaS</span>
+      <ul>
+        <li>Designed, enhanced and maintained UI and API automation frameworks with Selenium WebDriver, Java and REST Assured.</li>
+        <li>Built automated regression coverage and integrated it into Jenkins CI/CD pipelines, with scheduled and on-demand runs.</li>
+        <li>Validated APIs with REST Assured and supported functional and regression testing of application workflows.</li>
+        <li>Analyzed application logs to investigate test failures, support defect triage and find root causes.</li>
+        <li>Worked with AWS, Azure, Docker and Kubernetes in testing and CI workflows, and reviewed test scenarios and scripts with cross-functional Agile teams.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="job">
+    <div class="when">Apr 2020 – Jul 2021<small>Noida, India</small></div>
+    <div>
+      <h3>Senior Quality Analyst</h3><p class="org">ImpactQA Software Testing and QA Services Pvt. Ltd.</p>
+      <span class="proj">Vita Mojo · Food-chain retail</span>
+      <ul>
+        <li>Developed Selenium UI automation tests and Java/REST Assured API test coverage.</li>
+        <li>Connected automated test execution with Jenkins pipelines and Bitbucket workflows.</li>
+        <li>Prepared and ran functional, smoke and regression scenarios within Agile sprints, and followed up on defects with the team.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="job">
+    <div class="when">Jan 2017 – Apr 2020<small>Bengaluru, India</small></div>
+    <div>
+      <h3>Software Development Analyst</h3><p class="org">IQVIA</p>
+      <span class="proj">CDW · Commercial Data Warehouse</span>
+      <ul>
+        <li>Performed ETL and data validation across Informatica, Reltio MDM, Qubole and SQL-based workflows.</li>
+        <li>Automated ETL and REST API scenarios in Java, validating pipelines, transformations and data quality.</li>
+        <li>Designed manual and automated test cases, and ran smoke and regression testing with clear defect reporting.</li>
+      </ul>
+      <span class="proj">Nexus Marketing · Marketing</span>
+      <ul>
+        <li>Built Selenium WebDriver UI scripts with Java, Maven and TestNG to validate marketing channel modules.</li>
+        <li>Used SQL and functional scenarios to support application validation and regression coverage.</li>
+      </ul>
+    </div>
+  </article>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2>
+  <div class="pgrid">
+    <article class="card2"><h3>Santaba</h3><p class="org">SaaS · LogicMonitor</p><p>UI and API automation frameworks with regression suites that run on schedule or on demand in Jenkins pipelines.</p><div class="tags"><span>Java</span><span>Selenium WebDriver</span><span>REST Assured</span><span>Jenkins</span><span>Docker</span><span>Kubernetes</span></div></article>
+    <article class="card2"><h3>Vita Mojo</h3><p class="org">Food-chain retail · ImpactQA</p><p>Selenium UI tests and Java/REST Assured API coverage, connected to Jenkins pipelines and Bitbucket workflows.</p><div class="tags"><span>Java</span><span>Selenium</span><span>REST Assured</span><span>Jenkins</span><span>Bitbucket</span></div></article>
+    <article class="card2"><h3>CDW · Commercial Data Warehouse</h3><p class="org">Data analytics · IQVIA</p><p>ETL and data validation across Informatica, Reltio MDM and Qubole, with Java automation for ETL and REST API scenarios.</p><div class="tags"><span>SQL</span><span>Informatica</span><span>Reltio MDM</span><span>Qubole</span><span>Java</span></div></article>
+    <article class="card2"><h3>Nexus Marketing</h3><p class="org">Marketing · IQVIA</p><p>Selenium WebDriver UI scripts that validate marketing channel modules, backed by SQL and functional scenarios.</p><div class="tags"><span>Java</span><span>Selenium WebDriver</span><span>Maven</span><span>TestNG</span><span>SQL</span></div></article>
+  </div>
+  <p class="more"><a href="https://github.com/ImDukush" target="_blank" rel="noopener">See more code on GitHub</a></p>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="group"><h3>UI and API automation</h3><div class="tags"><span class="core">Selenium WebDriver</span><span class="core">REST Assured</span><span class="core">TestNG</span><span>Cucumber</span><span>Framework design</span></div></div>
+    <div class="group"><h3>Programming and data</h3><div class="tags"><span class="core">Java</span><span class="core">SQL</span><span>Python (working)</span><span>Playwright (working)</span><span>ETL validation</span></div></div>
+    <div class="group"><h3>CI/CD and build</h3><div class="tags"><span class="core">Jenkins</span><span>Maven</span><span class="core">Gradle</span><span>Git</span><span class="core">Bitbucket</span></div></div>
+    <div class="group"><h3>Cloud and containers</h3><div class="tags"><span class="core">AWS</span><span>Microsoft Azure</span><span class="core">Docker</span><span class="core">Kubernetes</span></div></div>
+    <div class="group"><h3>Quality engineering</h3><div class="tags"><span class="core">Test planning</span><span class="core">Test design</span><span class="core">Functional</span><span class="core">Smoke</span><span class="core">Regression</span><span class="core">Integration</span><span class="core">End-to-end</span><span class="core">Defect triage</span></div></div>
+    <div class="group"><h3>Reporting, data tools and process</h3><div class="tags"><span>Allure</span><span class="core">ReportPortal</span><span class="core">Log analysis</span><span>Informatica</span><span>Reltio MDM</span><span>Qubole</span><span class="core">Jira</span><span>TestRail</span><span class="core">TestLink</span><span class="core">Agile/Scrum</span><span class="core">ChatGPT</span><span class="core">GitHub Copilot</span></div></div>
+  </div>
+  <p style="margin-top:1rem;color:var(--muted);font-size:1rem">Highlighted tags are my strongest and most-used skills.</p>
+</div></section>
+
+<section id="testimonials" hidden><div class="wrap"><h2>Recommendations</h2><div class="tgrid" id="tst"></div></div></section>
+
+<section id="articles" hidden><div class="wrap"><h2>Articles</h2><div class="artgrid" id="art"></div></div></section>
+
+<section id="education"><div class="wrap two">
+  <div><h3>Education</h3><ul><li>B.Tech, Information Technology<small>Chhatrapati Shahu Ji Maharaj University, Kanpur · 2016</small></li></ul>
+  <h3 style="margin-top:2rem">Languages</h3><ul><li>English<small>Fluent</small></li><li>Hindi<small>Native</small></li></ul></div>
+  <div><h3>Certifications and learning</h3><ul>
+    <li>ISTQB Certified Tester, Foundation Level (CTFL)</li>
+    <li>Selenium WebDriver with Java<small>Udemy course</small></li>
+    <li>REST API Automation<small>Udemy course</small></li></ul></div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <h2>Contact</h2>
+  <p class="cintro">Open to conversations about QA automation, test frameworks and CI/CD quality. Reach me any way below.</p>
+  <div class="cgrid">
+    <a class="ccard" href="mailto:se.durgeshsharma@gmail.com"><span class="cico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span class="ctext"><span class="clabel">Email</span><span class="cval">se.durgeshsharma@gmail.com</span></span><span class="cact">Send email</span></a>
+    <a class="ccard" href="tel:+917275235226"><span class="cico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></span><span class="ctext"><span class="clabel">Phone</span><span class="cval">+91 7275235226</span></span><span class="cact">Call</span></a>
+    <a class="ccard" href="https://linkedin.com/in/imdukush" target="_blank" rel="noopener"><span class="cico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 11v6M8 7.5v.01M12 17v-6m0 3c0-2 1.5-3 3-3s2 1 2 3v3"/></svg></span><span class="ctext"><span class="clabel">LinkedIn</span><span class="cval">linkedin.com/in/imdukush</span></span><span class="cact">View profile</span></a>
+    <a class="ccard" href="https://github.com/ImDukush" target="_blank" rel="noopener"><span class="cico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 8-5 4 5 4M16 8l5 4-5 4M14 5l-4 14"/></svg></span><span class="ctext"><span class="clabel">GitHub</span><span class="cval">github.com/ImDukush</span></span><span class="cact">View code</span></a>
+  </div>
+<form class="cform" id="cform">
+    <h3>Send a message</h3>
+    <label>Your name<input id="fn" required autocomplete="name"></label>
+    <label>Your email<input id="fe" type="email" required autocomplete="email"></label>
+    <label>Message<textarea id="fm" required></textarea></label>
+    <button type="submit">Send message</button>
+    <small>This opens your email app with the message filled in.</small>
+  </form>
+</div></section>
+</main>
+<footer><div class="wrap">Pune, India (Remote) · English and Hindi · <a href="Durgesh_Kumar_Sharma_QA_Automation_Resume.pdf" download>Download resume (PDF)</a></div></footer>
+
+<script>
+/* Fill these lists to show the Achievements, Recommendations and Articles sections.
+   A section stays hidden while its list is empty.
+   achievements: {title:"Cut regression time by 40%", detail:"LogicMonitor"}
+   testimonials: {quote:"...", name:"Full Name", role:"Title, Company"}
+   articles:     {title:"...", url:"https://...", date:"Jan 2027", summary:"..."} */
+var SITE={achievements:[],testimonials:[],articles:[]};
+(function(){
+  function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+  function show(id,box,list,build){if(!list.length)return;var b=document.getElementById(box);list.forEach(function(i){b.appendChild(build(i))});document.getElementById(id).hidden=false}
+  show('achievements','ach',SITE.achievements,function(a){var d=el('div','card2');d.appendChild(el('strong',0,a.title));if(a.detail)d.appendChild(el('span',0,a.detail));return d});
+  show('testimonials','tst',SITE.testimonials,function(t){var d=el('figure','card2'),q=el('blockquote',0,'\u201C'+t.quote+'\u201D'),c=el('cite',0,t.name);if(t.role)c.appendChild(el('small',0,t.role));d.appendChild(q);d.appendChild(c);return d});
+  show('articles','art',SITE.articles,function(a){var d=el('article','card2'),h=el('h3'),l=el('a','t',a.title);l.href=a.url;l.target='_blank';l.rel='noopener';h.appendChild(l);d.appendChild(h);if(a.date)d.appendChild(el('p','org',a.date));if(a.summary)d.appendChild(el('p',0,a.summary));return d});
+
+  var root=document.documentElement,btn=document.getElementById('theme');
+  function apply(t){root.setAttribute('data-theme',t);btn.textContent=t==='dark'?'Light':'Dark';btn.setAttribute('aria-label','Switch to '+(t==='dark'?'light':'dark')+' theme')}
+  apply(root.getAttribute('data-theme')||'light');
+  btn.addEventListener('click',function(){var t=root.getAttribute('data-theme')==='dark'?'light':'dark';apply(t);try{localStorage.setItem('theme',t)}catch(e){}});
+
+  document.getElementById('cform').addEventListener('submit',function(e){
+    e.preventDefault();
+    var n=document.getElementById('fn').value,m=document.getElementById('fe').value,b=document.getElementById('fm').value;
+    location.href='mailto:se.durgeshsharma@gmail.com?subject='+encodeURIComponent('Portfolio message from '+n)+'&body='+encodeURIComponent(b+'\n\n'+n+' ('+m+')');
+  });
+})();
+</script>
+</body>
+</html>
