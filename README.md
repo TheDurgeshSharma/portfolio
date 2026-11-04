@@ -17,7 +17,7 @@ Open index.html, find `var SITE=` near the end, and add items to
 GitHub Pages:
 1. Create a repo (e.g. `portfolio`), upload index.html, photo.jpg and the PDF.
 2. Settings > Pages > Deploy from branch `main` / root.
-3. Your site: https://imdukush.github.io/portfolio/
+3. Your site: https://thedurgeshsharma.github.io/portfolio/
 
 Netlify: drag the folder onto https://app.netlify.com/drop.
 
